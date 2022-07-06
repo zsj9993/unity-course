@@ -5,9 +5,10 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     //Declaring Variables
-    [SerializeField] float xValue = 0f;
-    [SerializeField] float yValue = 0.01f;
-    [SerializeField] float zValue = 0f;
+    //These variables change the player object's position
+    //[SerializeField] float xValue = 0f;
+    //[SerializeField] float yValue = 0f;
+    //[SerializeField] float zValue = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,11 @@ public class Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Local stored variables for getting the horizontal and vertical axis
+        float xValue = Input.GetAxis("Horizontal");
+        float zValue = Input.GetAxis("Vertical");
+
         //Moves the player object over 0.01 units in the x-axis every frame
-        transform.Translate(xValue,yValue,zValue);
+        transform.Translate(xValue,0,zValue);
     }
 }
