@@ -10,7 +10,7 @@ public class Mover : MonoBehaviour
     //[SerializeField] float yValue = 0f;
     //[SerializeField] float zValue = 0f;
 
-    [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] float moveSpeed = 7.5f;
 
     // Start is called before the first frame update
     void Start()
