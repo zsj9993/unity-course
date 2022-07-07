@@ -10,6 +10,8 @@ public class Mover : MonoBehaviour
     //[SerializeField] float yValue = 0f;
     //[SerializeField] float zValue = 0f;
 
+    [SerializeField] float moveSpeed = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,8 @@ public class Mover : MonoBehaviour
     void Update()
     {
         //Local stored variables for getting the horizontal and vertical axis
-        float xValue = Input.GetAxis("Horizontal");
-        float zValue = Input.GetAxis("Vertical");
+        float xValue = Input.GetAxis("Horizontal")*Time.deltaTime*moveSpeed;
+        float zValue = Input.GetAxis("Vertical")*Time.deltaTime*moveSpeed;
 
         //Moves the player object over 0.01 units in the x-axis every frame
         transform.Translate(xValue,0,zValue);
