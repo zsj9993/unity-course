@@ -17,16 +17,31 @@ public class Mover : MonoBehaviour
     {
         //Moves the player object over 1 unit in the x-axis upon startup
         //transform.Translate(1,0,0);
+
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
     {
+        MovePlayer();
+    }
+
+    void PrintInstructions()
+    {
+        Debug.Log("Welcome to the game!");
+        Debug.Log("Use WASD to move the player.");
+        Debug.Log("Objective: Don't hit any obstacles or walls.");
+    }
+
+    void MovePlayer()
+    {
         //Local stored variables for getting the horizontal and vertical axis
-        float xValue = Input.GetAxis("Horizontal")*Time.deltaTime*moveSpeed;
-        float zValue = Input.GetAxis("Vertical")*Time.deltaTime*moveSpeed;
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
         //Moves the player object over 0.01 units in the x-axis every frame
-        transform.Translate(xValue,0,zValue);
+        transform.Translate(xValue, 0, zValue);
     }
+
 }
