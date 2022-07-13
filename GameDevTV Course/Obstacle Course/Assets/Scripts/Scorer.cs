@@ -8,7 +8,10 @@ public class Scorer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        hitCount++;
-        Debug.Log("You hit an object " + hitCount + " time(s).");
+        if(collision.gameObject.tag != "HitObject")
+        {
+            hitCount++;
+            Debug.Log("You hit an object " + hitCount + " time(s).");
+        }
     }
 }

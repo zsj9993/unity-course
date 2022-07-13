@@ -9,6 +9,12 @@ public class ObjectHit : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Player hit a wall");
-        GetComponent<MeshRenderer>().material = ObjectHitMaterial;
+
+        //Detects if the object is being collided by the player
+        if(collision.gameObject.tag == "Player")
+        {
+            GetComponent<MeshRenderer>().material = ObjectHitMaterial;
+            gameObject.tag = "HitObject";
+        }
     }
 }
